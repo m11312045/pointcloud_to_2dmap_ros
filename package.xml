@@ -1,24 +1,27 @@
 <?xml version="1.0"?>
-<package format="2">
-  <name>pointcloud_to_2dmap_ros</name>
-  <version>0.1.0</version>
-  <description>A package for converting point cloud data to a 2D map</description>
-  <maintainer email="laiyichengyuntech@gmail.com">Lai Yi-Cheng</maintainer>
-  <license>MIT</license>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>pointcloud_to_2dmap_ros2</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="m11312045@gemail.yuntech.edu.tw">user</maintainer>
+  <license>TODO: License declaration</license>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <build_depend>pcl_ros</build_depend>
-  <build_depend>cv_bridge</build_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>roscpp</build_depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>pcl_conversions</depend>
+  <depend>pcl_msgs</depend>
+  <depend>OpenCV</depend>
+  <depend>pcl_ros</depend>
 
-  <exec_depend>pcl_ros</exec_depend>
-  <exec_depend>cv_bridge</exec_depend>
-  <exec_depend>sensor_msgs</exec_depend>
-  <exec_depend>roscpp</exec_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <export>
-    <build_type>catkin</build_type>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>

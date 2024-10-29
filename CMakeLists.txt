@@ -1,31 +1,48 @@
-cmake_minimum_required(VERSION 3.0.2)
-project(pointcloud_to_2dmap_ros)
+cmake_minimum_required(VERSION 3.5)
+project(pointcloud_to_2dmap_ros2)
 
-find_package(catkin REQUIRED COMPONENTS
-  pcl_ros
-  cv_bridge
-  sensor_msgs
-  roscpp
-)
-
-find_package(PCL REQUIRED)
+# Find dependencies
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(PCL REQUIRED COMPONENTS io common)
 find_package(OpenCV REQUIRED)
-find_package(Boost REQUIRED COMPONENTS program_options)
 
-catkin_package()
-
+# Include directories
 include_directories(
   include
-  ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
-  ${Boost_INCLUDE_DIRS}
 )
 
-add_executable(pointcloud_to_2dmap_ros src/pointcloud_to_2dmap_ros.cpp)
-target_link_libraries(pointcloud_to_2dmap_ros
-  ${catkin_LIBRARIES}
-  ${PCL_LIBRARIES}
-  ${OpenCV_LIBRARIES}
-  ${Boost_LIBRARIES}
+# Link directories (if needed)
+link_directories(${PCL_LIBRARY_DIRS})
+
+# Define executable
+add_executable(pointcloud_to_2dmap_node src/pointcloud_to_2dmap_node.cpp)
+
+# Link libraries and set dependencies
+target_link_libraries(pointcloud_to_2dmap_node ${PCL_LIBRARIES} ${OpenCV_LIBS})
+ament_target_dependencies(pointcloud_to_2dmap_node
+  rclcpp
+  sensor_msgs
+  std_msgs
 )
+
+# Install target
+install(TARGETS pointcloud_to_2dmap_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+# Install other directories
+install(DIRECTORY
+  launch
+  map
+  DESTINATION share/${PROJECT_NAME}/
+)
+
+# ament package macros
+ament_package()
