@@ -10,13 +10,13 @@ def generate_launch_description():
             output='screen',
             parameters=[
                 {"resolution": 0.1},
-                {"map_width": 300},
-                {"map_height": 300},
+                {"map_width": 200},
+                {"map_height": 200},
                 {"min_points_in_pix": 1},
                 {"max_points_in_pix": 2},
-                {"min_height": 0.5},
+                {"min_height": 0.8},
                 {"max_height": 3.0},
-                {"dest_directory": "/home/user/ros2_ws/src/pointcloud_to_2dmap_ros/map/20241029_esoc_default/"},
+                {"dest_directory": "/home/user/ros2_ws/src/pointcloud_to_2dmap_ros/map/20241029_esoc_default"},
                 {"input_pcd": "/home/user/ros2_ws/src/pointcloud_to_2dmap_ros/map/20241029_esoc_default/map.pcd"},
                 {"map_name": "2dmap"}
             ]
