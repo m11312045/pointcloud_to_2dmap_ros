@@ -16,8 +16,8 @@ def generate_launch_description():
                 {"max_points_in_pix": 2},
                 {"min_height": 0.8},
                 {"max_height": 3.0},
-                {"dest_directory": "/home/user/ros2_ws/src/pointcloud_to_2dmap_ros/map/20241029_esoc_default"},
-                {"input_pcd": "/home/user/ros2_ws/src/pointcloud_to_2dmap_ros/map/20241029_esoc_default/map.pcd"},
+                {"dest_directory": "/home/esoc/ros2_ws/src/pointcloud_to_2dmap_ros/map/20241029_esoc_default"},
+                {"input_pcd": "/home/esoc/ros2_ws/src/pointcloud_to_2dmap_ros/map/20241029_esoc_default/map.pcd"},
                 {"map_name": "2dmap"}
             ]
         )

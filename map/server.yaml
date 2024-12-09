@@ -1,0 +1,21 @@
+map_server:
+  ros__parameters:
+    frame_id: map
+    topic_name: map
+    use_sim_time: false
+    # yaml_filename: /home/esoc/ros2_ws/src/pointcloud_to_2dmap_ros/map/20241029_esoc_default/map.yaml
+    yaml_filename: /home/esoc/ros2_ws/src/common_ws/slam_nav2/maps/esoc_map.yaml
+
+map_saver:
+  ros__parameters:
+    save_map_timeout: 5.0
+    free_thresh_default: 0.25
+    occupied_thresh_default: 0.65
+
+costmap_filter_info_server:
+  ros__parameters:
+    type: 1
+    filter_info_topic: "costmap_filter_info"
+    mask_topic: "filter_mask"
+    base: 0.0
+    multiplier: 0.25

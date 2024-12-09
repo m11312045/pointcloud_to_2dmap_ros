@@ -1,6 +1,6 @@
-image: 2dmap.png
-resolution: 0.1
-origin: [-10, -10, 0.0]
-occupied_thresh: 0.5
-free_thresh: 0.2
-negate: 0
+image: 2dmap.png          # 地圖圖像文件
+resolution: 0.1           # 地圖解析度（每像素對應的真實距離，單位為米）
+origin: [-10, -10, 0.0]   # 地圖原點在世界坐標中的位置（x, y, yaw）
+occupied_thresh: 0.5      # 判定為占用區域的閾值
+free_thresh: 0.2          # 判定為自由區域的閾值
+negate: 0                 # 是否反轉顏色（0 為否，1 為是）
